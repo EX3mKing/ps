@@ -11,7 +11,11 @@ CFLAGS = -Wall -Wextra -Werror # -Ift_printf -Ilibft
 SRCS = main.c \
 	ft_util_mem.c \
 	ft_util_str.c \
-
+	ft_split_extra.c \
+	ft_join_args.c \
+	ft_ps_atoi.c \
+	ft_stacks.c \
+	
 
 OBJS = $(SRCS:.c=.o)
 

@@ -6,7 +6,7 @@
 /*   By: bbosnjak <bbosnjak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/15 15:51:16 by bbosnjak          #+#    #+#             */
-/*   Updated: 2026/09/15 17:53:06 by bbosnjak         ###   ########.fr       */
+/*   Updated: 2026/09/17 14:53:13 by bbosnjak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,4 +63,27 @@ void	ft_putstr(char *s)
 	if (s == NULL)
 		return ;
 	write(1, s, ft_strlen(s));
+}
+
+char	*ft_substr(char *s, unsigned int start, size_t len)
+{
+	char	*ret;
+	size_t	l;
+	size_t	sl;
+
+	if (!s)
+		return (NULL);
+	sl = ft_strlen(s);
+	if (sl < start)
+		l = 0;
+	else if (len > sl - start)
+		l = sl - start;
+	else
+		l = len;
+	ret = malloc(l + 1);
+	if (ret == NULL)
+		return (NULL);
+	ret[l] = '\0';
+	ft_memcpy(ret, &s[start], l);
+	return (ret);
 }
